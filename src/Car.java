@@ -1,19 +1,45 @@
+import java.util.Random;
+
 public class Car {
-    int engineRating;
-    int aerodynamicRating;
-    int suspensionRating;
-    int durabilityRating;
-    public static int[] carStats = new int[4];
 
-    //The Cars attributes is linked to an array so the value is easier to make
-    public Car(int engineStats,int aerodynamicStats, int suspensionStats, int durabilityStats){
-        carStats[0] = engineStats;
-        carStats[1] = aerodynamicStats;
-        carStats[2] = suspensionStats;
-        carStats[3] = durabilityStats;
+    //public String[] carName = {"Your Team", "Redbull", "Ferrari", "Mercedes", "Mclaren", "Aston Martin", "Alpine", "Williams", "Haas", "Stake"};
+    public String name;
+    public int[] carStats = new int[4];
 
-        System.out.println(engineStats + "carclassprint");
+    //The Cars attributes is linked to an array
+    public Car(String name) {
+        this.name = name;
+        carStats[0] = randomizerCarMethod(); //engineStats
+        carStats[1] = randomizerCarMethod(); //aerodynamicStats
+        carStats[2] = randomizerCarMethod(); //suspensionStats
+        carStats[3] = randomizerCarMethod(); //durabilityStats
 
+        //Places a rating for each attributes from 0-99
+        System.out.println(Car.class.getName());
+        System.out.println(this.name);
+        for (int i : carStats) {
+            System.out.print(i + ", ");
         }
+        System.out.println();
+        System.out.println(avarageStats());
     }
+
+
+    //Randomizes Ints for car stats from 0-99
+    Random randomCarGenerator = new Random();
+
+    public int randomizerCarMethod() {
+        return (randomCarGenerator.nextInt(100));
+    }
+
+    //This takes the 4 values of each car and makes an average rating for the car. This is used to see where each cars performance is, compared to each other.
+    public double avarageStats() {
+        double sum = 0.0;
+        for (int i : carStats) {
+            sum = sum + i;
+        }
+        return (sum / carStats.length);
+    }
+
+}
 
