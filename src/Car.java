@@ -1,8 +1,6 @@
 import java.util.Random;
 
 public class Car {
-
-    //public String[] carName = {"Your Team", "Redbull", "Ferrari", "Mercedes", "Mclaren", "Aston Martin", "Alpine", "Williams", "Haas", "Stake"};
     public String name;
     public int[] carStats = new int[4];
 
@@ -15,7 +13,7 @@ public class Car {
         carStats[3] = randomizerCarMethod(); //durabilityStats
 
         //Places a rating for each attributes from 0-99
-        System.out.println(Car.class.getName());
+        Car.class.getName();
         System.out.println(this.name);
         for (int i : carStats) {
             System.out.print(i + ", ");
@@ -29,7 +27,7 @@ public class Car {
     Random randomCarGenerator = new Random();
 
     public int randomizerCarMethod() {
-        return (randomCarGenerator.nextInt(100));
+        return (randomCarGenerator.nextInt(21, 100));
     }
 
     //This takes the 4 values of each car and makes an average rating for the car. This is used to see where each cars performance is, compared to each other.

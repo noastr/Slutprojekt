@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="527ddf9c-653f-4cbd-b6e6-abc44b06294b" name="Changes" comment="onsdag 10/4">
-      <change afterPath="$PROJECT_DIR$/src/F1Manager.java" afterDir="false" />
+    <list default="true" id="527ddf9c-653f-4cbd-b6e6-abc44b06294b" name="Changes" comment="måndag och tisdag, 15 och 16 april">
+      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/F1Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/F1Manager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,13 +35,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "actions.on.save"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -81,7 +82,13 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1712756973267</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="måndag och tisdag, 15 och 16 april">
+      <created>1713446805081</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1713446805081</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,6 +105,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="måndag 8/4" />
     <MESSAGE value="onsdag 10/4" />
-    <option name="LAST_COMMIT_MESSAGE" value="onsdag 10/4" />
+    <MESSAGE value="måndag och tisdag, 15 och 16 april" />
+    <option name="LAST_COMMIT_MESSAGE" value="måndag och tisdag, 15 och 16 april" />
   </component>
 </project>
