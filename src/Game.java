@@ -2,11 +2,14 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game {
+    public static String teamName;
+    public static String driverName;
 
     public Game() {
         Scanner input = new Scanner(System.in);
         System.out.println("\n \n F1 Manager!"); // \n = Break
         int money = 1000000;
+
 
         //This is a simple menu. Either the user start the game or they quit the game.
         boolean menuBoolean = true;
@@ -18,7 +21,6 @@ public class Game {
                 System.out.println("\n      Menu \n\n1. Start game \n2. Quit game");
                 int choice = input.nextInt();
                 if (choice == 1) {
-                    System.out.println(choice + " coice");
                     valid = true;
                     menuBoolean = false;
                 }
@@ -26,12 +28,13 @@ public class Game {
                     System.exit(0);
                 }
             } catch (InputMismatchException e) {
-                input.nextLine();
                 System.out.println("Please try again! Type in the numbers on the side of the path to continue. \nIn this case, type 1 or 2");
+                input.nextLine();
             }
 
             //if the user typed in "1" it would make valid true and use the method "TeamSettings"
-            if (valid = true) {
+            if (valid == true) {
+                System.out.println("if valid ts");
                 TeamSettings();
             }
         }
@@ -69,20 +72,20 @@ public class Game {
                 System.out.println("Please try again! Type in the numbers on the side of the path to continue. \n In this case, type 1, 2, 3 or 4");
                 input.nextLine();
             }
-            /*
-            if (choice1 = true){
+
+            if (choice1 == true) {
                 Race();
             }
-            if (choice2 = true){
+            if (choice2 == true) {
                 Upgrades();
             }
-            if (choice3 = true){
+            if (choice3 == true) {
                 Standings();
             }
-            if (choice4 = true){
+            if (choice4 == true) {
                 BotStats();
             }
-            */
+
         }
 
     }
@@ -94,16 +97,19 @@ public class Game {
     ;
 
     public void Upgrades() {
+        System.out.println("Upgrade");
     }
 
     ;
 
     private void Standings() {
+        System.out.println("Max is p1");
     }
 
     ;
 
     private void BotStats() {
+        System.out.println("Cars bot stat");
         new F1Manager();
     }
 
@@ -113,10 +119,11 @@ public class Game {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Team Name:");
-        String teamName = input.nextLine();
-        System.out.println(teamName + "...What a great name for your team! \nNow we only need your driver name! \nDriver Name:");
-        String driverName = input.nextLine();
+        teamName = input.nextLine();
+        System.out.println(teamName + "...What a great name for your team! \nNow we only need your driver-name! \nDriver Name:");
+        driverName = input.nextLine();
         System.out.println(driverName + " Perfect.");
+
     }
 
 }

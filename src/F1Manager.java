@@ -6,7 +6,7 @@ public class F1Manager {
 
     public F1Manager() {
 //Car objects with different stats
-        Car playerCar = new Car("playerCar");
+        Car playerCar = new Car(Game.teamName);
         Car Redbull = new Car("Redbull");
         Car Ferrari = new Car("Ferrari");
         Car Mercedes = new Car("Mercedes");

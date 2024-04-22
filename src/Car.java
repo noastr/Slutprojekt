@@ -12,18 +12,18 @@ public class Car {
         carStats[2] = randomizerCarMethod(); //suspensionStats
         carStats[3] = randomizerCarMethod(); //durabilityStats
 
-        //Places a rating for each attributes from 0-99
+        //Places a rating for each attributes from 20-99
         Car.class.getName();
         System.out.println(this.name);
         for (int i : carStats) {
             System.out.print(i + ", ");
         }
         System.out.println();
-        System.out.println(avarageStats());
+        System.out.println("Average rating: " + avarageStats());
     }
 
 
-    //Randomizes Ints for car stats from 0-99
+    //Randomizes Ints for car stats from 20-99
     Random randomCarGenerator = new Random();
 
     public int randomizerCarMethod() {

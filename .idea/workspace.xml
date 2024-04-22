@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="527ddf9c-653f-4cbd-b6e6-abc44b06294b" name="Changes" comment="måndag och tisdag, 15 och 16 april">
-      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+    <list default="true" id="527ddf9c-653f-4cbd-b6e6-abc44b06294b" name="Changes" comment="måndag 22/4 14.02">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/F1Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/F1Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +87,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1713446805081</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="måndag 22/4 14.02">
+      <created>1713787386164</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1713787386164</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +111,7 @@
     <MESSAGE value="måndag 8/4" />
     <MESSAGE value="onsdag 10/4" />
     <MESSAGE value="måndag och tisdag, 15 och 16 april" />
-    <option name="LAST_COMMIT_MESSAGE" value="måndag och tisdag, 15 och 16 april" />
+    <MESSAGE value="måndag 22/4 14.02" />
+    <option name="LAST_COMMIT_MESSAGE" value="måndag 22/4 14.02" />
   </component>
 </project>
