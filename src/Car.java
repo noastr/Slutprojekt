@@ -4,22 +4,30 @@ public class Car {
     public String name;
     public int[] carStats = new int[4];
 
+    carStats[0]
+
+    int engineStats;
+    int aerodynamicStats;
+    int suspensionStats;
+    int durabilityStats;
+
     //The Cars attributes is linked to an array
-    public Car(String name) {
+    public Car(String name, int engineStats, int aerodynamicStats, int suspensionStats, int durabilityStats) {
         this.name = name;
-        carStats[0] = randomizerCarMethod(); //engineStats
-        carStats[1] = randomizerCarMethod(); //aerodynamicStats
-        carStats[2] = randomizerCarMethod(); //suspensionStats
-        carStats[3] = randomizerCarMethod(); //durabilityStats
+
 
         //Places a rating for each attributes from 20-99
         Car.class.getName();
         System.out.println(this.name);
-        for (int i : carStats) {
+        System.out.println("Engine: " + carStats[0]);
+        System.out.println("Aerodynamic: " + carStats[1]);
+        System.out.println("Suspension: " + carStats[2]);
+        System.out.println("Durability: " + carStats[3]);
+        /*for (int i : carStats) {
             System.out.print(i + ", ");
-        }
-        System.out.println();
+        }*/
         System.out.println("Average rating: " + avarageStats());
+        System.out.println();
     }
 
 
@@ -38,6 +46,7 @@ public class Car {
         }
         return (sum / carStats.length);
     }
+
 
 }
 

@@ -5,16 +5,22 @@ public class Game {
     public static String teamName;
     public static String driverName;
 
+    Scanner input = new Scanner(System.in);
+
     public Game() {
-        Scanner input = new Scanner(System.in);
         System.out.println("\n \n F1 Manager!"); // \n = Break
         int money = 1000000;
 
+        StartMenu();
 
-        //This is a simple menu. Either the user start the game or they quit the game.
+        MainMenu();
+
+    }
+
+    public void StartMenu() {
         boolean menuBoolean = true;
-        while (menuBoolean) {
-            boolean valid = false;
+        while (menuBoolean) { //This whileloop, loops until the user has used the right input. When the user does, it breaks and continues with the code.
+            boolean valid = false; //Valid is used to check whether the user typed in 1 to continue, if the user does the if statement in line 42 continues to the next step.
 
             //This try-catch checks if the input in valid, and if something is wrong it repeats the segment and scans again
             try {
@@ -34,14 +40,15 @@ public class Game {
 
             //if the user typed in "1" it would make valid true and use the method "TeamSettings"
             if (valid == true) {
-                System.out.println("if valid ts");
                 TeamSettings();
             }
         }
         System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"); //"clears" the console
+    }
 
+    public void MainMenu() {
         boolean gameBoolean = true;
-        while (gameBoolean) {
+        while (gameBoolean) { //Same concept as in menuBoolean, it won't break until the right input is used, and it's checked with the same try-catch as before as well. In this case it's 1-4
             boolean choice1 = false;
             boolean choice2 = false;
             boolean choice3 = false;
@@ -87,7 +94,6 @@ public class Game {
             }
 
         }
-
     }
 
     public void Race() {
@@ -111,18 +117,30 @@ public class Game {
     private void BotStats() {
         System.out.println("Cars bot stat");
         new F1Manager();
+
+        System.out.println("Type 'back' to return to the main menu.");
+        input.nextLine();
+        String blablabla = input.nextLine();
+        System.out.println(blablabla);
+
+        // Check if the user has typed "back", doesn't matter if its with or without capital letters
+        if (blablabla.equalsIgnoreCase("back")) {
+            MainMenu();
+        } else {
+            // Invalid input, inform user and loops again
+            System.out.println("Invalid input. Please type 'back' to return.");
+        }
     }
 
     ;
 
     public void TeamSettings() {
-        Scanner input = new Scanner(System.in);
 
-        System.out.println("Team Name:");
+        System.out.println("Welcome to F1 Manager! \nFirst thing you need to do is creating your team. Please write your team name \nTeam Name:");
         teamName = input.nextLine();
-        System.out.println(teamName + "...What a great name for your team! \nNow we only need your driver-name! \nDriver Name:");
+        System.out.println(teamName + " is a great name for your team! \nNow we only need your driver-name! \nDriver Name:");
         driverName = input.nextLine();
-        System.out.println(driverName + " Perfect.");
+        System.out.println(driverName + ", Perfect!");
 
     }
 

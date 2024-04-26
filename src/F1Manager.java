@@ -5,8 +5,8 @@ import java.util.HashMap;
 public class F1Manager {
 
     public F1Manager() {
-//Car objects with different stats
-        Car playerCar = new Car(Game.teamName);
+//Every car on the grid with their name easily accesable
+        Car playerCar = new Car(Game.teamName); //
         Car Redbull = new Car("Redbull");
         Car Ferrari = new Car("Ferrari");
         Car Mercedes = new Car("Mercedes");
@@ -19,18 +19,18 @@ public class F1Manager {
 
         HashMap<String, String> team = new HashMap<String, String>();
 
-        //team.put("");
-        team.put("Redbull", "Verstappen");
-        team.put("Ferrari", "Leclerc");
-        team.put("Mercedes", "Hamilton");
-        team.put("Mclaren", "Norris");
-        team.put("Aston Martin", "Alonso");
-        team.put("Alpine", "Gasly");
-        team.put("Williams", "Albon");
-        team.put("Haas", "Hulkenberg");
-        team.put("Stake", "Bottas");
+        team.put(playerCar.name, Game.driverName);
+        team.put(Redbull.name, "Verstappen");
+        team.put(Ferrari.name, "Leclerc");
+        team.put(Mercedes.name, "Hamilton");
+        team.put(Mclaren.name, "Norris");
+        team.put(Aston_Martin.name, "Alonso");
+        team.put(Alpine.name, "Gasly");
+        team.put(Williams.name, "Albon");
+        team.put(Haas.name, "Hulkenberg");
+        team.put(Stake.name, "Bottas");
 
-        System.out.println(team.get("Redbull"));
+        System.out.println(team.get(Redbull.name));
 
     }
 
