@@ -1,19 +1,32 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Game {
     public static String teamName;
     public static String driverName;
-
+    public static int money = 10000;
+    HashMap<String, Car> team = new HashMap<String, Car>();
     Scanner input = new Scanner(System.in);
 
+    Car playerCar = new Car(teamName, 64, 64, 61, 60); //
+    Car Redbull = new Car("Redbull", 96, 97, 90, 99);
+    Car Ferrari = new Car("Ferrari", 90, 87, 80, 87);
+    Car Mercedes = new Car("Mercedes", 81, 82, 84, 80);
+    Car Mclaren = new Car("Mclaren", 76, 79, 77, 81);
+    Car Aston_Martin = new Car("Aston Martin", 80, 77, 75, 80);
+    Car Alpine = new Car("Alpine", 73, 72, 67, 75);
+    Car Williams = new Car("Williams", 73, 80, 70, 69);
+    Car Haas = new Car("Haas", 68, 71, 66, 67);
+    Car Stake = new Car("Stake", 61, 64, 60, 64);
+
+
     public Game() {
+
         System.out.println("\n \n F1 Manager!"); // \n = Break
-        int money = 1000000;
 
         StartMenu();
 
         MainMenu();
+
 
     }
 
@@ -55,7 +68,7 @@ public class Game {
             boolean choice4 = false;
 
             try {
-                System.out.println("Menu \n\n1.Next Race \n2.Upgrades \n3.Standings \n4.Constructor Statitics");
+                System.out.println("Menu \n\n1.Next Race \n2.Upgrades \n3.Standings \n4.Constructor Rating");
                 int choice = input.nextInt();
                 if (choice == 1) {
                     choice1 = true;
@@ -98,12 +111,154 @@ public class Game {
 
     public void Race() {
         System.out.println("Racing vroom");
-    }
+
+        Car[] allCars = {playerCar, Redbull, Ferrari, Mercedes, Mclaren, Aston_Martin, Alpine, Williams, Haas, Stake}; // Assuming all cars are in an array
+
+
 
     ;
 
     public void Upgrades() {
-        System.out.println("Upgrade");
+        System.out.println("Your balance is " + money + "$");
+        Random random = new Random();
+
+        int upgradeChoice = 0;
+        int randPrice = random.nextInt(2001) + 3000; //Randomizes the price for the upgrade from 3000 to 4000
+        int remainMoney = money - randPrice; //The remaining money the user would have if they proceeded with the purchase
+        int randAmount = random.nextInt(4); //Randomizes how much the upgrade will do from 0-3. Example: Engine has 60 and buying this upgrade might get it to 63. But if the user is unlucky, the upgrade may fail and wont gain any points.
+
+        try {
+            System.out.println("What do you want to upgrade? \n1. Engine\n2. Aerodynamics\n3. Reliability\n4. Weight \n5. Information about Research & Development \n6. Game Menu");
+            upgradeChoice = input.nextInt();
+
+            switch (upgradeChoice) { //switch case is easier to cope with when there is so many options for the user to make. it also has its own "defualt" which can do things if the users input doesnt match what is should
+                case 1: // FYI, case 1-4 has all the same code, only that it upgrades different parts
+
+                    if (money >= randPrice) { //this if statement check if the user has enough money to buy the upgrade, otherwise they will be sent back to the menu
+                        System.out.println("This upgrade costs " + randPrice + "$, you have " + money + "$ currently. \nIf you proceed with this purchase, you will have " + remainMoney + "$ remaining. Would you still like to proceed? y/n");
+                        String upgradeProceed = input.next();
+
+                        switch (upgradeProceed) {
+                            case "y":
+                                money -= randPrice; //User pays for the upgrade and "money" will have that same value throughout the code bc of the -=
+                                playerCar.engine += randAmount; //the attribute upgrades 0-3 points and stays that way bc +=. in this case its the engine
+                                System.out.println(playerCar.engine - randAmount + " -> " + playerCar.engine);
+                                System.out.println("Your engine went up with " + randAmount + " points for " + randPrice + "$");
+                                break;
+                            case "n":
+                                System.out.println("Going back...");
+                                break;
+                            default:
+                                System.out.println("Please type in 'y' for yes, and 'n' for no.");
+                                break;
+                        }
+                        Upgrades();
+                    } else {
+                        System.out.println("Insufficient funds... You only have " + money);
+                        Upgrades();
+                    }
+                    break;
+
+                case 2:
+
+                    if (money >= randPrice) {
+                        System.out.println("This upgrade costs " + randPrice + "$, you have " + money + "$ currently. \nIf you proceed with this purchase, you will have " + remainMoney + "$ remaining. Would you still like to proceed? y/n");
+                        String upgradeProceed = input.next();
+
+                        switch (upgradeProceed) {
+                            case "y":
+                                money -= randPrice;
+
+                                playerCar.aerodynamics += randAmount;
+                                System.out.println(playerCar.aerodynamics - randAmount + " -> " + playerCar.aerodynamics);
+                                System.out.println("Your aerodynimcs went up with " + randAmount + " points for " + randPrice + "$");
+                                break;
+                            case "n":
+                                System.out.println("Going back...");
+                                break;
+                            default:
+                                System.out.println("Please type in 'y' for yes, and 'n' for no.");
+                                break;
+                        }
+                        Upgrades();
+                    } else {
+                        System.out.println("Insufficient funds... You only have " + money);
+                        Upgrades();
+                    }
+                    break;
+
+                case 3:
+
+                    if (money >= randPrice) {
+                        System.out.println("This upgrade costs " + randPrice + "$, you have " + money + "$ currently. \nIf you proceed with this purchase, you will have " + remainMoney + "$ remaining. Would you still like to proceed? y/n");
+                        String upgradeProceed = input.next();
+
+                        switch (upgradeProceed) {
+                            case "y":
+                                money -= randPrice;
+
+                                playerCar.reliability += randAmount;
+                                System.out.println(playerCar.reliability - randAmount + " -> " + playerCar.reliability);
+                                System.out.println("Your reliability went up with " + randAmount + " points for " + randPrice + "$");
+                                break;
+                            case "n":
+                                System.out.println("Going back...");
+                                break;
+                            default:
+                                System.out.println("Please type in 'y' for yes, and 'n' for no.");
+                                break;
+                        }
+                        Upgrades();
+                    } else {
+                        System.out.println("Insufficient funds... You only have " + money);
+                        Upgrades();
+                    }
+                    break;
+
+                case 4:
+
+                    if (money >= randPrice) {
+                        System.out.println("This upgrade costs " + randPrice + "$, you have " + money + "$ currently. \nIf you proceed with this purchase, you will have " + remainMoney + "$ remaining. Would you still like to proceed? y/n");
+                        String upgradeProceed = input.next();
+
+                        switch (upgradeProceed) {
+                            case "y":
+                                money -= randPrice;
+
+                                playerCar.weight += randAmount;
+                                System.out.println(playerCar.weight - randAmount + " -> " + playerCar.weight);
+                                System.out.println("Your weight went up with " + randAmount + " points for " + randPrice + "$");
+                                break;
+                            case "n":
+                                System.out.println("Going back...");
+                                break;
+                            default:
+                                System.out.println("Please type in 'y' for yes, and 'n' for no.");
+                                break;
+                        }
+                        Upgrades();
+
+                    } else {
+                        System.out.println("Insufficient funds... You only have " + money);
+                        Upgrades();
+                    }
+                    break;
+
+                case 5:
+                    System.out.println("Research and Upgrades are your chance to make your cars performance better. \nWhen you buy an upgrade, your rating will go up by 1 to 3 points for that attribute. \nThere is a chance to fail your research and therefore pay for nothing. \nTo upgrade, simply type in 1 to 4 to upgrade the attribute you want!\n");
+                    break;
+
+                case 6:
+                    MainMenu();
+                    break;
+            }
+            Upgrades();
+
+        } catch (InputMismatchException e) {
+            System.out.println("Please try again! Type in the numbers on the side of the path to continue. \n In this case, type 1, 2, 3 or 4");
+            input.nextLine();
+        }
+
     }
 
     ;
@@ -116,7 +271,7 @@ public class Game {
 
     private void BotStats() {
         System.out.println("Cars bot stat");
-        new F1Manager();
+        DisplayStats();
 
         System.out.println("Type 'back' to return to the main menu.");
         input.nextLine();
@@ -137,11 +292,38 @@ public class Game {
     public void TeamSettings() {
 
         System.out.println("Welcome to F1 Manager! \nFirst thing you need to do is creating your team. Please write your team name \nTeam Name:");
-        teamName = input.nextLine();
+        teamName = input.next();
         System.out.println(teamName + " is a great name for your team! \nNow we only need your driver-name! \nDriver Name:");
-        driverName = input.nextLine();
+        driverName = input.next();
         System.out.println(driverName + ", Perfect!");
 
     }
 
+    private void DisplayStats() {
+
+
+        //team.put(playerCar.name, playerCar);
+        team.put(Redbull.name, Redbull);
+        team.put(Ferrari.name, Ferrari);
+        team.put(Mercedes.name, Mercedes);
+        team.put(Mclaren.name, Mclaren);
+        team.put(Aston_Martin.name, Aston_Martin);
+        team.put(Alpine.name, Alpine);
+        team.put(Williams.name, Williams);
+        team.put(Haas.name, Haas);
+        team.put(Stake.name, Stake);
+
+        System.out.println(teamName + ": Engine: " + playerCar.engine + ", Aerodynamic: " + playerCar.aerodynamics +
+                " , Reliability: " + playerCar.reliability + " , Weight: " + playerCar.weight + "\n");
+        for (Car stats : team.values()) {
+            System.out.println(stats.name + ": Engine: " + stats.engine + ", Aerodynamic: " + stats.aerodynamics +
+                    " , Reliability: " + stats.reliability + " , Weight: " + stats.weight);
+            System.out.println();
+        }
+    }
+
 }
+
+
+
+

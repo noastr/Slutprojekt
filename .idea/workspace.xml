@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="527ddf9c-653f-4cbd-b6e6-abc44b06294b" name="Changes" comment="måndag 22/4 14.02">
+    <list default="true" id="527ddf9c-653f-4cbd-b6e6-abc44b06294b" name="Changes" comment="torsdag 23/4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/F1Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/F1Manager.java" afterDir="false" />
@@ -93,7 +93,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1713787386164</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="torsdag 23/4">
+      <created>1714119062117</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1714119062117</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +118,10 @@
     <MESSAGE value="onsdag 10/4" />
     <MESSAGE value="måndag och tisdag, 15 och 16 april" />
     <MESSAGE value="måndag 22/4 14.02" />
-    <option name="LAST_COMMIT_MESSAGE" value="måndag 22/4 14.02" />
+    <MESSAGE value="torsdag 23/4" />
+    <option name="LAST_COMMIT_MESSAGE" value="torsdag 23/4" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Slutprojekt$Main.ic" NAME="Main Coverage Results" MODIFIED="1714247546309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
