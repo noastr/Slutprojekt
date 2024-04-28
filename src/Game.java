@@ -4,19 +4,21 @@ public class Game {
     public static String teamName;
     public static String driverName;
     public static int money = 10000;
+    public static int raceGoal;
+    public static Double worstTeamRating;
     HashMap<String, Car> team = new HashMap<String, Car>();
     Scanner input = new Scanner(System.in);
 
-    Car playerCar = new Car(teamName, 64, 64, 61, 60); //
-    Car Redbull = new Car("Redbull", 96, 97, 90, 99);
-    Car Ferrari = new Car("Ferrari", 90, 87, 80, 87);
-    Car Mercedes = new Car("Mercedes", 81, 82, 84, 80);
-    Car Mclaren = new Car("Mclaren", 76, 79, 77, 81);
-    Car Aston_Martin = new Car("Aston Martin", 80, 77, 75, 80);
-    Car Alpine = new Car("Alpine", 73, 72, 67, 75);
-    Car Williams = new Car("Williams", 73, 80, 70, 69);
-    Car Haas = new Car("Haas", 68, 71, 66, 67);
-    Car Stake = new Car("Stake", 61, 64, 60, 64);
+    Car playerCar = new Car(teamName, 64, 64, 61, 60, 0); //
+    Car Redbull = new Car("Redbull", 96, 97, 90, 99, 0);
+    Car Ferrari = new Car("Ferrari", 90, 87, 80, 87, 0);
+    Car Mercedes = new Car("Mercedes", 81, 82, 84, 80, 0);
+    Car Mclaren = new Car("Mclaren", 76, 79, 77, 81, 0);
+    Car Aston_Martin = new Car("Aston Martin", 80, 77, 75, 80, 0);
+    Car Alpine = new Car("Alpine", 73, 72, 67, 75, 0);
+    Car Williams = new Car("Williams", 73, 80, 70, 69, 0);
+    Car Haas = new Car("Haas", 68, 71, 66, 67, 0);
+    Car Stake = new Car("Stake", 61, 64, 60, 64, 0);
 
 
     public Game() {
@@ -110,11 +112,42 @@ public class Game {
     }
 
     public void Race() {
-        System.out.println("Racing vroom");
+        PredictedPosition();
+        Random random = new Random();
+        System.out.println("Your goal for this race is p" + raceGoal + "\nIf you succeed you will earn a 10000$ bonus!");
 
-        Car[] allCars = {playerCar, Redbull, Ferrari, Mercedes, Mclaren, Aston_Martin, Alpine, Williams, Haas, Stake}; // Assuming all cars are in an array
 
+        team.put(Redbull.name, Redbull);
+        team.put(Ferrari.name, Ferrari);
+        team.put(Mercedes.name, Mercedes);
+        team.put(Mclaren.name, Mclaren);
+        team.put(Aston_Martin.name, Aston_Martin);
+        team.put(Alpine.name, Alpine);
+        team.put(Williams.name, Williams);
+        team.put(Haas.name, Haas);
+        team.put(Stake.name, Stake);
 
+        for (Car carName : team.values()) {
+            carName.points = random.nextDouble(carName.pointSystem());
+        }
+
+        ArrayList<Double> racingGrid = new ArrayList<>();
+        racingGrid.add(playerCar.points);
+        racingGrid.add(Redbull.points);
+        racingGrid.add(Mclaren.points);
+        racingGrid.add(Mercedes.points);
+        racingGrid.add(Aston_Martin.points);
+        racingGrid.add(Haas.points);
+        racingGrid.add(Williams.points);
+        racingGrid.add(Ferrari.points);
+        racingGrid.add(Stake.points);
+        racingGrid.add(Alpine.points);
+
+        Collections.sort(racingGrid);
+        Collections.reverse(racingGrid);
+
+        for ()
+    }
 
     ;
 
@@ -315,14 +348,43 @@ public class Game {
 
         System.out.println(teamName + ": Engine: " + playerCar.engine + ", Aerodynamic: " + playerCar.aerodynamics +
                 " , Reliability: " + playerCar.reliability + " , Weight: " + playerCar.weight + "\n");
-        for (Car stats : team.values()) {
-            System.out.println(stats.name + ": Engine: " + stats.engine + ", Aerodynamic: " + stats.aerodynamics +
-                    " , Reliability: " + stats.reliability + " , Weight: " + stats.weight);
+        for (Car carName : team.values()) {
+            System.out.println(carName.name + ": Engine: " + carName.engine + ", Aerodynamic: " + carName.aerodynamics +
+                    " , Reliability: " + carName.reliability + " , Weight: " + carName.weight);
             System.out.println();
         }
     }
 
+    private void PredictedPosition() {
+        ArrayList<Double> allCars = new ArrayList<>();
+        allCars.add(playerCar.averageStats());
+        allCars.add(Redbull.averageStats());
+        allCars.add(Ferrari.averageStats());
+        allCars.add(Mercedes.averageStats());
+        allCars.add(Stake.averageStats());
+        allCars.add(Mclaren.averageStats());
+        allCars.add(Aston_Martin.averageStats());
+        allCars.add(Alpine.averageStats());
+        allCars.add(Williams.averageStats());
+        allCars.add(Haas.averageStats());
+        // Sort every car based on their average stat (lowest to highest)
+        //This is to make a prediction on where the user should end up in the race to earn a money bonus.
+        Collections.sort(allCars);
+
+        double gridPlacement = allCars.indexOf(playerCar.averageStats()); //this places the players car in a positional ranking based on average stats
+
+        if (gridPlacement < 4) {
+            raceGoal = 5;
+        } else if (gridPlacement <= 4 & gridPlacement < 2) {
+            raceGoal = 3;
+        } else if (gridPlacement >= 2) {
+            raceGoal = 1;
+        }
+
+        worstTeamRating = Collections.min(allCars);
+    }
 }
+
 
 
 
