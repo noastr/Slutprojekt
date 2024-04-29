@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="527ddf9c-653f-4cbd-b6e6-abc44b06294b" name="Changes" comment="glömde comitta igår kväll (lördag) men gjorde klart upgrades method.">
+    <list default="true" id="527ddf9c-653f-4cbd-b6e6-abc44b06294b" name="Changes" comment="detta är nuvarande koden, håller på med racing simulatorn. 00.36 på måndagen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/F1Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/F1Manager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +104,13 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1714332932740</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="detta är nuvarande koden, håller på med racing simulatorn. 00.36 på måndagen">
+      <created>1714343803814</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1714343803814</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,7 +131,8 @@
     <MESSAGE value="måndag 22/4 14.02" />
     <MESSAGE value="torsdag 23/4" />
     <MESSAGE value="glömde comitta igår kväll (lördag) men gjorde klart upgrades method." />
-    <option name="LAST_COMMIT_MESSAGE" value="glömde comitta igår kväll (lördag) men gjorde klart upgrades method." />
+    <MESSAGE value="detta är nuvarande koden, håller på med racing simulatorn. 00.36 på måndagen" />
+    <option name="LAST_COMMIT_MESSAGE" value="detta är nuvarande koden, håller på med racing simulatorn. 00.36 på måndagen" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Slutprojekt$Main.ic" NAME="Main Coverage Results" MODIFIED="1714247546309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

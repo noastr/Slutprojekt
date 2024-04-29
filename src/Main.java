@@ -1,8 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-
-        //new F1Manager();
+        //Starts the game
         new Game();
 
     }
